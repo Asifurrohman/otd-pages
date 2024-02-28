@@ -1,0 +1,120 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+
+body{
+	font-family: 'montserrat', sans-serif;
+	font-optical-sizing: auto;
+}
+
+.header{
+	background-image: url('img/hero-cover.jpg');
+/*	background-image: linear-gradient(90deg, rgba(38,142,206,0.3) 0%, rgba(0,212,255,1) 100%), url('img/img_8448.jpg');*/
+	background-size: cover;
+	background-repeat: no-repeat;
+/*	background-position: center;*/
+	min-height: 100vh;
+/*	max-height: 800px;*/
+}
+
+.header h2{
+	color: #269bc0;
+}
+
+.h1-title{
+	margin-top: 50px;
+	font-size: 25px;
+	line-height: 30px;
+/*	background-color: #269bc0;*/
+    max-width: 650px;
+}
+
+.h1-span{
+	font-weight: 400;
+}
+
+.btn-outline-primary{
+	background-color: #fff;
+	color: #269bc0;
+}
+
+.font-biru{
+	color: #269bc0;
+}
+
+.btn-kuning-hz{
+	background-color: #ffd83f;
+}
+
+.form-wrapper{
+	background-color: #fff;
+	z-index: 1;
+}
+
+.input-style{
+	display: none;
+}
+
+.radio-style{
+	border: 1px solid #269bc0;
+	color: #269bc0;
+	cursor: pointer;
+}
+
+.radio-style-active,
+.btn-donation-custom-active,
+.form-menu-button-active,
+.btn-primary:hover,
+.btn-outline-primary:hover{
+	color: #fff;
+	background-color: #269bc0;
+}
+
+
+
+.btn-primary{
+	background-color: #269bc0;
+}
+
+/*.btn-metode-pembayaran{
+	color: #269bc0;
+}*/
+
+.metode-pembayaran-icon{
+	max-width: 70px;
+}
+
+.text-metode-pembayaran{
+	font-size: 14px;
+}
+
+.btn-opsi-pembayaran{
+	transition: 0.2s;
+/*	width: 100%;*/
+}
+
+.btn-opsi-pembayaran:hover{
+	background-color: rgba(106, 106, 106, 0.3)
+}
+
+.merchant-logo{
+	max-width: 200px;
+}
+
+.btn-selengkapnya{
+	text-decoration: none;
+}
+
+.card-custom{
+	border: 1px solid transparent;
+}
+
+.list-jenjang li::marker{
+	color: #269bc0;
+}
+
+#outputPaymentMethod{
+	border: none;
+	background-color: #fff;
+	color: #16a085;
+	font-weight: 700;
+}
