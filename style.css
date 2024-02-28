@@ -111,3 +111,10 @@ body{
 .list-jenjang li::marker{
 	color: #269bc0;
 }
+
+#outputPaymentMethod{
+	border: none;
+	background-color: #fff;
+	color: #16a085;
+	font-weight: 700;
+}

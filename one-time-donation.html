@@ -67,7 +67,7 @@
 							</div>
 							<div class="input-group mb-3">
 								<span class="input-group-text" id="basic-addon1">Rp.</span>
-								<input type="number" id="donasiCustom" class="form-control" placeholder="Jumlah Lainnya">
+								<input type="number" id="donasiCustom" class="form-control" placeholder="Jumlah Lainnya" minlength="5">
 							</div>
 							<p class="text-center fw-bold">
 								Lengkapi Data Di Bawah Ini
@@ -87,7 +87,7 @@
 							<div class="row mb-3">
 								<span class="text-metode-pembayaran col-8">
 									Pilih Metode Pembayaran: <br>
-									<span id="output-payment-method" class="text-success fw-bold">-</span>
+									<input type="text" id="outputPaymentMethod" disabled>
 								</span>
 								<button class="btn btn-kuning-hz btn-metode-pembayaran col-4" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasPilihPembayaran" aria-controls="offcanvasPilihPembayaran">
 									Pilih
@@ -169,7 +169,7 @@
 								</div>
 							</div>
 							<div class="d-grid gap-2">
-								<button class="btn btn-primary mb-3" id="submitDonasi" type="button">
+								<button class="btn btn-primary mb-3" id="submitDonasi" type="submit">
 									Donasi Sekarang
 								</button>
 								<p class="text-center" style="font-size: 14px">
@@ -249,56 +249,87 @@
 	</section>
 
 
+	<script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+	<script src="script.js"></script>
 	<script>
-			// Radio button nominal donasi
-		let btnsDonasi = document.querySelectorAll('.radio-style');
-		let btnSubmitDonasi = document.getElementById('submitDonasi');
+		// 	// Radio button nominal donasi
+		// let btnsRadioDonasi = document.querySelectorAll('.radio-style');
+		// let btnSubmitDonasi = document.getElementById('submitDonasi');
+		// let selectedRadioValue;
 
-			// Value nominal donasi
-		let donationValue = document.getElementsByName('nominal_donasi');
-		let donationCustomValue = document.getElementById('donasiCustom');
+		// 	// Value nominal donasi
+		// let donationRadioValue = document.getElementsByName('nominal_donasi');
+		// let donationCustomValue = document.getElementById('donasiCustom');
+		// let donationValueFix;
 
-			// value data diri
-		let donationNama = document.getElementById('formDonasiNama');
-		let donationEmail = document.getElementById('formDonasiEmail');
-		let donationNoHp = document.getElementById('formDonasiNoHp');
+		// let outputPaymentMethod = document.getElementById('outputPaymentMethod');
 
-			// metode donasi
-		let donationMetode = document.getElementsByClassName('selected-method');
+		// 	// value data diri
+		// let donationNama = document.getElementById('formDonasiNama');
+		// let donationEmail = document.getElementById('formDonasiEmail');
+		// let donationNoHp = document.getElementById('formDonasiNoHp');
 
-		btnsDonasi.forEach(btnElement => {
-			btnElement.addEventListener('click', () => {
-				document.querySelector('.radio-style-active')?.classList.remove('radio-style-active');
-				btnElement.classList.add('radio-style-active');
-			});
-		});
+		// 	// metode donasi
+		// let donationMetode = document.getElementsByClassName('selected-method');
+		// let fixedMethodPayment;
 
-		selectedPaymentMethod = (e) => {
-			console.log(e);
-			document.getElementById('output-payment-method').innerHTML = e.toUpperCase();
-		}
+		// btnsRadioDonasi.forEach(btnElement => {
+		// 	btnElement.addEventListener('click', () => {
+		// 		document.querySelector('.radio-style-active')?.classList.remove('radio-style-active');
+		// 		btnElement.classList.add('radio-style-active');
+		// 	});
+		// });
 
-		btnSubmitDonasi.addEventListener("click", () =>{
-			let selectedRadioValue;
-			for(i = 0; i < donationValue.length; i++){
-				if (donationValue[i].checked) {
-					selectedRadioValue = donationValue[i].value;
-				}
-			}
+		// radioValue = () => {
+		// 	for(i = 0; i < donationRadioValue.length; i++){
+		// 		if (donationRadioValue[i].checked) {
+		// 			selectedRadioValue = donationRadioValue[i].value;
+		// 			return selectedRadioValue;
+		// 		}
+		// 	}
+		// }
 
-			if (donationCustomValue.value === "") {
-				console.log(selectedRadioValue);
-				console.log(donationNama.value);
-				console.log(donationEmail.value);
-				console.log(donationNoHp.value);
-			} else {
-				console.log(donationCustomValue.value);
-				console.log(donationNama.value);
-				console.log(donationEmail.value);
-				console.log(donationNoHp.value);
-			}
-		});
+
+		// chosenValue = () => {
+		// 	if (donationCustomValue.value === "") {
+		// 		donationValueFix = radioValue();
+		// 	} else {
+		// 		donationValueFix = donationCustomValue.value;
+		// 	}
+
+		// 	return donationValueFix;
+		// }
+
+		// selectedPaymentMethod = (e) => {
+		// 	fixedMethodPayment = e;
+		// 	outputPaymentMethod.value = e.toUpperCase();
+		// }
+
+		// $(document).ready(function(){
+		// 	$("form").submit(function(e){
+		// 		e.preventDefault();
+
+		// 		const data = {
+		// 			name: donationNama.val(),
+		// 			email: donationEmail.val(),
+		// 			phoneNumber: donationNoHp.val(),
+		// 			donationValue: chosenValue(),
+		// 			paymentMethod: fixedMethodPayment
+		// 		};
+
+		// 		$.ajax({
+		// 			type: 'POST',
+		// 			url: '',
+		// 			data: JSON.stringify(data),
+		// 			contentType: 'application/json'
+		// 		}).done((data) => {
+		// 			console.log({data});
+		// 		}).fail((err) => {
+		// 			console.log({err});
+		// 		});
+		// 	});
+		// });
 	</script>
 
 </body>

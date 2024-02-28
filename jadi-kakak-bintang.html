@@ -122,55 +122,56 @@
 
 
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+	<script src="script.js"></script>
 	<script>
-			// Radio button nominal donasi
-		let btnsDonasi = document.querySelectorAll('.radio-style');
-		let btnSubmitDonasi = document.getElementById('submitDonasi');
+		// 	// Radio button nominal donasi
+		// let btnsDonasi = document.querySelectorAll('.radio-style');
+		// let btnSubmitDonasi = document.getElementById('submitDonasi');
 
-			// Value nominal donasi
-		let donationValue = document.getElementsByName('nominal_donasi');
-		let donationCustomValue = document.getElementById('donasiCustom');
+		// 	// Value nominal donasi
+		// let donationValue = document.getElementsByName('nominal_donasi');
+		// let donationCustomValue = document.getElementById('donasiCustom');
 
-			// value data diri
-		let donationNama = document.getElementById('formDonasiNama');
-		let donationEmail = document.getElementById('formDonasiEmail');
-		let donationNoHp = document.getElementById('formDonasiNoHp');
+		// 	// value data diri
+		// let donationNama = document.getElementById('formDonasiNama');
+		// let donationEmail = document.getElementById('formDonasiEmail');
+		// let donationNoHp = document.getElementById('formDonasiNoHp');
 
-			// metode donasi
-		let donationMetode = document.getElementsByClassName('selected-method');
+		// 	// metode donasi
+		// let donationMetode = document.getElementsByClassName('selected-method');
 
-		btnsDonasi.forEach(btnElement => {
-			btnElement.addEventListener('click', () => {
-				document.querySelector('.radio-style-active')?.classList.remove('radio-style-active');
-				btnElement.classList.add('radio-style-active');
-			});
-		});
+		// btnsDonasi.forEach(btnElement => {
+		// 	btnElement.addEventListener('click', () => {
+		// 		document.querySelector('.radio-style-active')?.classList.remove('radio-style-active');
+		// 		btnElement.classList.add('radio-style-active');
+		// 	});
+		// });
 
-		selectedPaymentMethod = (e) => {
-			console.log(e);
-			document.getElementById('output-payment-method').innerHTML = e.toUpperCase();
-		}
+		// selectedPaymentMethod = (e) => {
+		// 	console.log(e);
+		// 	document.getElementById('output-payment-method').innerHTML = e.toUpperCase();
+		// }
 
-		btnSubmitDonasi.addEventListener("click", () =>{
-			let selectedRadioValue;
-			for(i = 0; i < donationValue.length; i++){
-				if (donationValue[i].checked) {
-					selectedRadioValue = donationValue[i].value;
-				}
-			}
+		// btnSubmitDonasi.addEventListener("click", () =>{
+		// 	let selectedRadioValue;
+		// 	for(i = 0; i < donationValue.length; i++){
+		// 		if (donationValue[i].checked) {
+		// 			selectedRadioValue = donationValue[i].value;
+		// 		}
+		// 	}
 
-			if (donationCustomValue.value === "") {
-				console.log(selectedRadioValue);
-				console.log(donationNama.value);
-				console.log(donationEmail.value);
-				console.log(donationNoHp.value);
-			} else {
-				console.log(donationCustomValue.value);
-				console.log(donationNama.value);
-				console.log(donationEmail.value);
-				console.log(donationNoHp.value);
-			}
-		});
+		// 	if (donationCustomValue.value === "") {
+		// 		console.log(selectedRadioValue);
+		// 		console.log(donationNama.value);
+		// 		console.log(donationEmail.value);
+		// 		console.log(donationNoHp.value);
+		// 	} else {
+		// 		console.log(donationCustomValue.value);
+		// 		console.log(donationNama.value);
+		// 		console.log(donationEmail.value);
+		// 		console.log(donationNoHp.value);
+		// 	}
+		// });
 	</script>
 
 </body>
